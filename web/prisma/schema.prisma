@@ -123,6 +123,7 @@ model Post {
   isMandatory           Boolean        @default(false)
   isPinned              Boolean        @default(false)
   participants          Participant[]
+  maxParticipants       Int?     // Optional, null = unlimited
   forEvent              SummerJobEvent @relation(fields: [forEventId], references: [id], onDelete: Cascade)
   forEventId            String
 }
